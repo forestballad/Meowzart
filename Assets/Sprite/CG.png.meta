@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5ac1c82ea9436954ca8f1bedd158da3c
-timeCreated: 1513247279
+guid: 75e98384a54776e448fb7f63749ddec0
+timeCreated: 1513845221
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,7 @@ TextureImporter:
     21300006: CG_3
     21300008: CG_4
     21300010: CG_5
+    21300012: CG_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -167,6 +168,20 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6000
+        y: 0
+        width: 1200
+        height: 1129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CG_6
+      rect:
+        serializedVersion: 2
+        x: 7200
         y: 0
         width: 1200
         height: 1129
