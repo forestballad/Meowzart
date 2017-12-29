@@ -8,8 +8,11 @@ public class CatController : MonoBehaviour {
     public bool m_BeenTouched;
     GameObject m_LocationMarker;
 
+
     public AudioClip CorrectSound;
     public AudioClip WrongSound;
+
+    public List<GameObject> HandAnimPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +54,9 @@ public class CatController : MonoBehaviour {
             return;
         }
         m_BeenTouched = true;
+        GameObject hand = Instantiate(HandAnimPrefab[GameObject.Find("GameLogic").GetComponent<LevelController>().m_hand],this.transform);
+        hand.transform.localPosition = new Vector2(0, 1.4f);
+       
         if (m_CatType == GameObject.Find("GameLogic").GetComponent<LevelController>().m_hand)
         {
             GetComponent<Animator>().SetInteger("Touch", 0);

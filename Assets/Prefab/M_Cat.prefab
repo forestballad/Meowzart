@@ -180,8 +180,12 @@ MonoBehaviour:
   m_CatType: 0
   m_CatLocNum: 0
   m_BeenTouched: 0
-  CorrectSound: {fileID: 8300000, guid: 9fc3db5e7338d154a9a5601deeb0cf37, type: 3}
-  WrongSound: {fileID: 8300000, guid: 30062410e000c4843be6bc0711b26d94, type: 3}
+  CorrectSound: {fileID: 8300000, guid: 890868b089d584b4094f898ab2de03ae, type: 3}
+  WrongSound: {fileID: 8300000, guid: 0d165c8f3120f6f478d96fa16f773c1a, type: 3}
+  HandAnimPrefab:
+  - {fileID: 1033059645186900, guid: 70569d111207ba447ba1de3ecc2fb190, type: 2}
+  - {fileID: 1324856869169182, guid: c0a20608f83787549bdd05e2dd1def7d, type: 2}
+  - {fileID: 1222935062518316, guid: 21ba46b8301d34c408866bb504f859ba, type: 2}
 --- !u!212 &212460205117479648
 SpriteRenderer:
   m_ObjectHideFlags: 1
