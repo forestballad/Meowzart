@@ -211,6 +211,10 @@ public class LevelController : MonoBehaviour {
 
     public void CatTouch(int type)
     {
+        if (m_burstTriggerFlag)
+        {
+            return;
+        }
         if (type == 0)
         {
             OeCorrect++;
@@ -232,6 +236,10 @@ public class LevelController : MonoBehaviour {
 
     public void CatMiss(int type)
     {
+        if (m_burstTriggerFlag)
+        {
+            return;
+        }
         if (type == 0)
         {
             OeMiss++;
