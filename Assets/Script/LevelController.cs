@@ -248,6 +248,7 @@ public class LevelController : MonoBehaviour {
         {
             MiMiss++;
         }
+        RefreshScore();
     }
 
     public void ReleaseCatLoc(int LocNum)
