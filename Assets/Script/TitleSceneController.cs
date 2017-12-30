@@ -7,7 +7,7 @@ public class TitleSceneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Screen.SetResolution(640 / 2, 1136 / 2, false);
+        Screen.SetResolution(480, 852, false);
 	}
 	
 	// Update is called once per frame
