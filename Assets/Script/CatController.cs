@@ -5,6 +5,7 @@ using UnityEngine;
 public class CatController : MonoBehaviour {
     public int m_CatType;
     public int m_CatLocNum;
+    int m_TouchType;
     public bool m_BeenTouched;
     GameObject m_LocationMarker;
 
@@ -17,6 +18,7 @@ public class CatController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         m_BeenTouched = false;
+        m_TouchType = -1;
 	}
 	
 	// Update is called once per frame
@@ -32,7 +34,7 @@ public class CatController : MonoBehaviour {
         m_ClipName = m_CurrentClipInfo[0].clip.name;
         if (m_BeenTouched && (m_ClipName != "Cat_M_Idle" && m_ClipName != "Cat_O_Idle") && GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
-            GameObject.Find("GameLogic").GetComponent<LevelController>().CatTouch(m_CatType);
+            GameObject.Find("GameLogic").GetComponent<LevelController>().CatTouch(m_TouchType);
             DestroyCat();
         }
     }
@@ -56,7 +58,25 @@ public class CatController : MonoBehaviour {
         m_BeenTouched = true;
         GameObject hand = Instantiate(HandAnimPrefab[GameObject.Find("GameLogic").GetComponent<LevelController>().m_hand],this.transform);
         hand.transform.localPosition = new Vector2(0, 1.4f);
-       
+
+        int m_hand = GameObject.Find("GameLogic").GetComponent<LevelController>().m_hand;
+        if (m_CatType == 0 && m_hand == 0)
+        {
+            m_TouchType = 0;
+        }
+        else if (m_CatType == 1 && m_hand == 1)
+        {
+            m_TouchType = 1;
+        }
+        else if (m_CatType == 0 && m_hand == 1)
+        {
+            m_TouchType = 2;
+        }
+        else
+        {
+            m_TouchType = 3;
+        }
+
         if (m_CatType == GameObject.Find("GameLogic").GetComponent<LevelController>().m_hand)
         {
             GetComponent<Animator>().SetInteger("Touch", 0);

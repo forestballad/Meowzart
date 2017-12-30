@@ -126,7 +126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &42216934
 RectTransform:
   m_ObjectHideFlags: 0
@@ -390,7 +390,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 159}
-  m_SizeDelta: {x: 300, y: 335}
+  m_SizeDelta: {x: 302, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &147252015
 MonoBehaviour:
@@ -2207,7 +2207,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 110}
-  m_SizeDelta: {x: 1200, y: 1129}
+  m_SizeDelta: {x: 1175, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140691468
 MonoBehaviour:
@@ -2228,7 +2228,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300006, guid: 75e98384a54776e448fb7f63749ddec0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 968abcd29cbfe4e4ea9e0a39ddab5277, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2602,19 +2602,20 @@ MonoBehaviour:
   - {fileID: 397173301}
   - {fileID: 1072800659}
   BGMPlayer: {fileID: 1469871583}
-  RankM: {fileID: 21300010, guid: 75e98384a54776e448fb7f63749ddec0, type: 3}
-  RankA_O: {fileID: 21300006, guid: 75e98384a54776e448fb7f63749ddec0, type: 3}
-  RankA_M: {fileID: 21300008, guid: 75e98384a54776e448fb7f63749ddec0, type: 3}
-  RankB_O: {fileID: 21300002, guid: 75e98384a54776e448fb7f63749ddec0, type: 3}
-  RankB_M: {fileID: 21300004, guid: 75e98384a54776e448fb7f63749ddec0, type: 3}
-  RankC: {fileID: 21300000, guid: 75e98384a54776e448fb7f63749ddec0, type: 3}
-  RankD: {fileID: 21300012, guid: 75e98384a54776e448fb7f63749ddec0, type: 3}
+  RankM: {fileID: 21300014, guid: 968abcd29cbfe4e4ea9e0a39ddab5277, type: 3}
+  RankA_O: {fileID: 21300006, guid: 968abcd29cbfe4e4ea9e0a39ddab5277, type: 3}
+  RankA_M: {fileID: 21300008, guid: 968abcd29cbfe4e4ea9e0a39ddab5277, type: 3}
+  RankB_O: {fileID: 21300002, guid: 968abcd29cbfe4e4ea9e0a39ddab5277, type: 3}
+  RankB_M: {fileID: 21300004, guid: 968abcd29cbfe4e4ea9e0a39ddab5277, type: 3}
+  RankC: {fileID: 21300000, guid: 968abcd29cbfe4e4ea9e0a39ddab5277, type: 3}
+  RankD: {fileID: 21300010, guid: 968abcd29cbfe4e4ea9e0a39ddab5277, type: 3}
   EndGameDisplay: {fileID: 42216933}
   EndGameCG: {fileID: 1140691466}
   EndGameCredit: {fileID: 1923606872}
   EndGameCGArrowLeft: {fileID: 1925400813}
   EndGameCGArrowRight: {fileID: 1717246975}
   Transparent: {fileID: 1790494269}
+  SwitchThing: {fileID: 1492659173}
 --- !u!4 &1469871582
 Transform:
   m_ObjectHideFlags: 0
@@ -2718,6 +2719,7 @@ GameObject:
   - component: {fileID: 1492659174}
   - component: {fileID: 1492659176}
   - component: {fileID: 1492659175}
+  - component: {fileID: 1492659177}
   m_Layer: 0
   m_Name: HandSwitchButtonArrow
   m_TagString: Untagged
@@ -2741,7 +2743,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 1, y: 86}
-  m_SizeDelta: {x: 132, y: 133}
+  m_SizeDelta: {x: 160, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492659175
 MonoBehaviour:
@@ -2762,7 +2764,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300028, guid: 2eafafa5519107744af25d1404d8399d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 92356992be2fc974f8576444954ef2e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2776,6 +2778,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1492659173}
+--- !u!95 &1492659177
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492659173}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7767d5d83dcca24d826fcf20b84033b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1496052651
 Prefab:
   m_ObjectHideFlags: 0

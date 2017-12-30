@@ -52,6 +52,10 @@ public class LevelController : MonoBehaviour {
     int OeWrong;
     int SPTouched;
 
+    public GameObject SwitchThing;
+    float SwtichStopTime;
+    bool SwitchStopFlag;
+
 	// Use this for initialization
 	void Start () {
 
@@ -68,6 +72,7 @@ public class LevelController : MonoBehaviour {
         m_endgameFlag = false;
         m_burstPrepareFlag = false;
         m_burstTriggerFlag = false;
+        SwitchStopFlag = false;
 
         ChangeHand(0);
 
@@ -113,6 +118,12 @@ public class LevelController : MonoBehaviour {
             m_spawnLevel = 3;
         }
 
+        if (SwitchStopFlag && m_timer > SwtichStopTime)
+        {
+            SwitchThing.GetComponent<Animator>().SetBool("IsMoving", false);
+            SwitchStopFlag = false;
+        }
+
         if (!m_burstPrepareFlag && m_timer >= BGMPlayer.clip.length - 3)
         {
             CancelInvoke();
@@ -131,7 +142,7 @@ public class LevelController : MonoBehaviour {
         {
             ChangeHand(0);
         }
-        else if (m_burstTriggerFlag && (Input.GetKey(KeyCode.A)|| Input.GetKeyDown(KeyCode.S)))
+        else if (!m_burstTriggerFlag && (Input.GetKey(KeyCode.A)|| Input.GetKeyDown(KeyCode.S)))
         {
             ChangeHand(1);
         }
@@ -149,6 +160,14 @@ public class LevelController : MonoBehaviour {
 
     public void ChangeHand(int hand)
     {
+        if (m_burstTriggerFlag)
+        {
+            return;
+        }
+        SwitchThing.GetComponent<Animator>().SetBool("IsMoving", true);
+        SwtichStopTime = BGMPlayer.time + 0.25f;
+        SwitchStopFlag = true;
+
         if (hand == -1)
         {
             m_hand = 1-m_hand;
@@ -157,7 +176,7 @@ public class LevelController : MonoBehaviour {
         {
             m_hand = hand;
         }
-        Cursor.SetCursor(HandCursorSprites[m_hand],new Vector2(14,2),CursorMode.ForceSoftware);
+        Cursor.SetCursor(HandCursorSprites[m_hand],new Vector2(14,2),CursorMode.Auto);
         GameObject.Find("HandSwitchButton").GetComponent<Image>().sprite = HandSelectionSprites[m_hand];
     }
 
@@ -192,19 +211,19 @@ public class LevelController : MonoBehaviour {
 
     public void CatTouch(int type)
     {
-        if (type == 0 && m_hand == 0)
+        if (type == 0)
         {
             OeCorrect++;
         }
-        else if (type == 1 && m_hand == 1)
+        else if (type == 1)
         {
             MiCorrect++;
         }
-        else if (type == 0 && m_hand == 1)
+        else if (type == 2)
         {
             OeWrong++;
         }
-        else if (type == 1 && m_hand == 0)
+        else if (type == 3)
         {
             MiWrong++;
         }
